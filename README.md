@@ -25,6 +25,34 @@ The problem is to create a tool for Software Artifacts Summarisation. The tool a
 
 6. **Appending Summary to README**:  
    Appends the generated summary to the README file of the cloned repository.
+This Python script performs a series of operations related to managing and analyzing GitHub repositories. It fetches closed issues, prints unique issues, generates testing-related issues, summarizes them, clones the repository, and appends the summary to the README.md file. The script leverages various libraries and APIs including `requests` for HTTP requests, `git` for repository cloning, `GenAI` for content generation, and `Transformers` for text summarization.
+
+---
+
+### Technical Information
+This Python script performs a series of operations related to managing and analyzing
+testing related issues of GitHub repositories for tester’s perspective:
+
+### Fetching Closed Issues
+The `fetch_closed_issues` function fetches closed issues from a specified GitHub repository using the GitHub API. It constructs a URL based on the repository owner and name, sends a GET request, and returns the JSON response containing closed issues.
+
+### Printing Unique Issues
+The `print_unique_issues` function takes the fetched closed issues, sorts them by creation date, and prints unique issue details, avoiding duplicate titles.
+
+### Generating Testing Related Issues
+The `filter_testing_related_issues` function processes the titles and bodies of closed issues to generate new testing-related issues using the GenAI GenerativeModel. It appends a prompt to the combined issue titles and bodies, generates new content, and returns it.
+
+### Summarizing Issues
+The `summarise_issues` function summarizes the generated testing-related issues using the Transformers summarization pipeline with the BART-large model. It returns a concise summary of the issues.
+
+### Cloning Repository
+The `clone_repo` function clones the specified GitHub repository to a local destination path using GitPython's `Repo.clone_from` method. If a directory with the same name already exists at the destination, it removes it before cloning.
+
+### Appending Summary to README
+The `append_summary_to_readme` function appends the generated summary of testing-related issues to the README.md file in the cloned repository's directory.
+
+The main function is a collection of these operations by taking a GitHub repository URL
+from the user, parsing it to extract the repository owner and name, fetching closed issues, generating testing related issues, summarizing them, cloning the repository, and appending the summary to the README file. The script leverages various libraries and APIs including requests for HTTP requests, git for repository cloning, GenAI for content generation, and Transformers for text summarisation.
 
 ### Libraries and Techniques Used:
 
