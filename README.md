@@ -46,6 +46,7 @@ The problem is to create a tool for Software Artifacts Summarisation. The tool a
 ## Results
 
 The tool prints unique closed issues sorted by creation date, identifies testing-related issues, generates a summary of these issues, clones the GitHub repository locally, and appends the summary to the README file.
+![Output](./output.png)
 
 ## New Learnings
 
