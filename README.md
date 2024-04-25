@@ -1,4 +1,4 @@
-# CS23M109 Software Artifacts Summarisation Tool
+# Software Artifacts Summarisation Tool
 
 ## Problem Statement
 
